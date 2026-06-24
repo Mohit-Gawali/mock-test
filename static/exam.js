@@ -246,6 +246,6 @@ const escapeHTML = (str) => {
         sessionStorage.setItem('mockTestDetails', JSON.stringify(detailedResults));
 
         setTimeout(() => {
-            window.location.href = "{{ url_for('score_page') }}";
+            window.location.href = "/score";
         }, 1000);
     }

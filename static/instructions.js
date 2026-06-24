@@ -15,6 +15,6 @@
         proceedBtn.addEventListener('click', () => {
             proceedBtn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Loading...';
             setTimeout(() => {
-                window.location.href = "{{ url_for('exam_page') }}";
+                window.location.href = "/exam";
             }, 1500);
         });
