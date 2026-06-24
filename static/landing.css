@@ -1,0 +1,88 @@
+body {
+            /* Theme surface color from your design system */
+            background-color: #fbf8ff; 
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+            overflow: hidden;
+            gap: 3rem;
+            /* Smooth background transition */
+            transition: background-color 0.5s ease;
+        }
+
+        /* Windows-like 4-pane logo container */
+        .windows-logo {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+            width: 120px;
+            height: 120px;
+            /* Give it a 3D perspective to match the classic/modern Windows angle */
+            transform: perspective(600px) rotateY(-15deg);
+            transition: transform 0.5s ease;
+        }
+
+        /* The individual tiles */
+        .pane {
+            /* Theme primary color */
+            background-color: #00288e; 
+            border-radius: 4px;
+            /* Windows style breathing pulse animation */
+            animation: pulse-glow 2.5s ease-in-out infinite alternate;
+        }
+
+        /* Staggered animation delay for a wave effect */
+        .pane:nth-child(1) { animation-delay: 0s; }
+        .pane:nth-child(2) { animation-delay: 0.2s; }
+        .pane:nth-child(3) { animation-delay: 0.4s; }
+        .pane:nth-child(4) { animation-delay: 0.6s; }
+
+        @keyframes pulse-glow {
+            0% { 
+                transform: scale(0.95) translateZ(0px); 
+                opacity: 0.8; 
+                box-shadow: 0 0 0px rgba(0, 40, 142, 0);
+            }
+            100% { 
+                transform: scale(1.02) translateZ(10px); 
+                opacity: 1; 
+                box-shadow: 0 8px 20px rgba(0, 40, 142, 0.4); 
+            }
+        }
+
+        /* Instructional text */
+        .instruction {
+            font-family: 'Inter', sans-serif;
+            color: #444653; /* Theme on-surface-variant */
+            font-size: 1.125rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            /* Pulse rapidly */
+            animation: pulse-opacity 0.8s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-opacity {
+            0% { opacity: 0.2; transform: scale(0.98); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Exit animation triggered on click (Windows 11 fluent style zoom-fade) */
+        .exit-animation {
+            animation: fluentExit 0.4s forwards cubic-bezier(0.2, 0, 0, 1);
+        }
+
+        @keyframes fluentExit {
+            0% { 
+                opacity: 1; 
+                transform: scale(1); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: scale(1.1); /* Zoom in slightly as it fades */
+            }
+        }

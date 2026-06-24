@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How It Works - Certification Exam</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dad9e3",
+                        "surface": "#fbf8ff",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "tertiary": "#611e00",
+                        "primary-container": "#1e40af",
+                        "on-surface-variant": "#444653",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b8c4ff",
+                        "on-tertiary-fixed-variant": "#802a00",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#eeedf7",
+                        "secondary": "#904d00",
+                        "tertiary-container": "#872d00",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#2f1500",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "outline": "#757684",
+                        "primary-fixed": "#dde1ff",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#00288e",
+                        "primary-fixed-dim": "#b8c4ff",
+                        "on-surface": "#1a1b22",
+                        "inverse-on-surface": "#f1f0fa",
+                        "surface-variant": "#e3e1eb",
+                        "surface-container-high": "#e8e7f1",
+                        "secondary-fixed": "#ffdcc3",
+                        "on-primary-container": "#a8b8ff",
+                        "surface-tint": "#3755c3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e3e1eb",
+                        "on-secondary-fixed-variant": "#6e3900",
+                        "tertiary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#ffb77d",
+                        "secondary-container": "#fe932c",
+                        "on-primary-fixed": "#001453",
+                        "surface-container-low": "#f4f2fc",
+                        "inverse-surface": "#2f3037",
+                        "on-secondary-container": "#663500",
+                        "background": "#fbf8ff",
+                        "on-background": "#1a1b22",
+                        "on-tertiary-fixed": "#380d00",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffa583",
+                        "on-primary-fixed-variant": "#173bab",
+                        "surface-bright": "#fbf8ff",
+                        "outline-variant": "#c4c5d5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "base": "8px",
+                        "xl": "48px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+
+
+  
+<link rel="stylesheet" href="{{ url_for('static', filename='instructions.css') }}">
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 w-full bg-surface dark:bg-surface-container border-b border-outline-variant dark:border-outline transition-colors duration-200">
+<div class="flex justify-between items-center px-lg py-sm max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="school">school</span>
+<h1 class="font-headline-md text-headline-md text-primary dark:text-inverse-primary font-bold">How It Works</h1>
+</div>
+
+</div>
+</header>
+<main class="flex-grow px-lg pt-lg pb-40 max-w-[500px] mx-auto w-full">
+<!-- Hero Visual Section -->
+<div class="mb-xl relative h-48 rounded-xl overflow-hidden bg-surface-container-low border border-outline-variant">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, #00288e 1px, transparent 0); background-size: 24px 24px;"></div>
+</div>
+<div class="relative h-full flex flex-col items-center justify-center p-lg text-center">
+<div class="animate-float bg-primary-container/10 p-md rounded-full mb-md border border-primary-container/20">
+<span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: 'opsz' 48;">description</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Prepare for excellence with our professional simulation environment.</p>
+</div>
+</div>
+<!-- Instructions List -->
+<div class="space-y-lg">
+<!-- Step 1 -->
+<div class="group flex items-start gap-lg p-lg bg-surface border border-outline-variant rounded-xl transition-all duration-300 hover:shadow-[0px_4px_6px_rgba(15,23,42,0.05)]">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-2xl" data-icon="upload_file">upload_file</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs">Step 01</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">Upload your Mock Test JSON file</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Select and import your examination structure. We support standardized certification formats.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group flex items-start gap-lg p-lg bg-surface border border-outline-variant rounded-xl transition-all duration-300 hover:shadow-[0px_4px_6px_rgba(15,23,42,0.05)]">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-2xl" data-icon="timer">timer</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs">Step 02</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">The test is timed, keep an eye on the countdown</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Simulate real exam pressure. A prominent timer will guide your pacing throughout the session.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group flex items-start gap-lg p-lg bg-surface border border-outline-variant rounded-xl transition-all duration-300 hover:shadow-[0px_4px_6px_rgba(15,23,42,0.05)]">
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-2xl" data-icon="fact_check">fact_check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs">Step 03</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xs">You can review your answers at the end</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Once finished, access a detailed breakdown of your performance with correct answers and explanations.</p>
+</div>
+</div>
+</div>
+<!-- Supportive Info Card -->
+<div class="mt-xl p-lg bg-surface-container-high rounded-xl border border-outline-variant/50">
+<div class="flex items-center gap-sm mb-sm text-primary">
+<span class="material-symbols-outlined text-md" data-icon="info">info</span>
+<span class="font-label-md text-label-md font-bold">Pro Tip</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">Ensure your device is fully charged and notifications are silenced for an uninterrupted testing experience.</p>
+</div>
+</main>
+<!-- Bottom Action Bar -->
+<footer class="fixed bottom-0 left-0 w-full bg-surface dark:bg-surface-container px-lg py-md border-t border-outline-variant dark:border-outline z-50">
+<div class="max-w-[500px] mx-auto flex flex-col gap-sm">
+<button class="w-full h-14 step-gradient text-on-primary font-headline-md text-headline-md rounded-xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-md">
+                Proceed to Exam
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant">By proceeding, you agree to our examination integrity policy.</p>
+</div>
+</footer>
+<!-- Bottom Navigation Shell (Contextual Check: Hidden on task-focused sub-page) -->
+<!-- Navigation suppressed per 'Destination Rule' for task-focused onboarding flow -->
+
+
+<script src="{{ url_for('static', filename='instructions.js') }}"></script>
+</body></html>

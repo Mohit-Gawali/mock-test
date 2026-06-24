@@ -1,0 +1,11 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .score-gauge {
+            background: conic-gradient(#1e40af 0% 85%, #E2E8F0 85% 100%);
+            border-radius: 50%;
+        }

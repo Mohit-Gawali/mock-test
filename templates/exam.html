@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Professional Certification Mock Test</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#dad9e3",
+                    "primary": "#00288e",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf8ff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "outline": "#757684",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#dde1ff",
+                    "surface-variant": "#e3e1eb",
+                    "on-tertiary-fixed-variant": "#802a00",
+                    "inverse-on-surface": "#f1f0fa",
+                    "primary-container": "#1e40af",
+                    "inverse-primary": "#b8c4ff",
+                    "on-secondary-fixed-variant": "#6e3900",
+                    "on-tertiary-fixed": "#380d00",
+                    "surface-container-highest": "#e3e1eb",
+                    "surface-container-low": "#f4f2fc",
+                    "secondary-fixed-dim": "#ffb77d",
+                    "on-primary-fixed": "#001453",
+                    "outline-variant": "#c4c5d5",
+                    "surface-bright": "#fbf8ff",
+                    "tertiary-container": "#872d00",
+                    "on-surface-variant": "#444653",
+                    "surface": "#fbf8ff",
+                    "secondary-fixed": "#ffdcc3",
+                    "on-surface": "#1a1b22",
+                    "on-secondary-container": "#663500",
+                    "secondary": "#904d00",
+                    "tertiary-fixed": "#ffdbce",
+                    "primary-fixed-dim": "#b8c4ff",
+                    "on-secondary-fixed": "#2f1500",
+                    "surface-tint": "#3755c3",
+                    "surface-container-high": "#e8e7f1",
+                    "on-error-container": "#93000a",
+                    "on-background": "#1a1b22",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#eeedf7",
+                    "secondary-container": "#fe932c",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-container": "#ffa583",
+                    "tertiary": "#611e00",
+                    "on-primary-fixed-variant": "#173bab",
+                    "on-primary-container": "#a8b8ff",
+                    "inverse-surface": "#2f3037"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "xl": "48px",
+                    "gutter": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "lg": "24px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='exam.css') }}">
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline flex justify-between items-center px-lg h-16 w-full">
+<div class="flex items-center gap-md">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Generate Custom Mock Test</h1>
+</div>
+<div class="flex items-center gap-lg">
+<div class="flex items-center gap-xs text-primary font-bold bg-primary-fixed px-md py-sm rounded-lg" id="timer-container">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+<span class="font-mono text-lg tracking-wider" id="timer">45:00</span>
+<button id="edit-time-btn" class="ml-2 hover:opacity-70 transition-opacity flex items-center justify-center"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+</div>
+<div class="hidden md:flex gap-sm">
+</div>
+</div>
+</header>
+<main class="flex-1 mt-16 mb-24 flex items-center justify-center p-md lg:p-xl overflow-y-auto relative">
+
+    <!-- Upload Overlay -->
+    <div id="upload-overlay" class="absolute inset-0 z-40 bg-surface/90 backdrop-blur-sm flex flex-col items-center justify-center border-4 border-dashed border-primary/50 m-4 rounded-2xl transition-all">
+        <span class="material-symbols-outlined text-[64px] text-primary mb-4" style="font-variation-settings: 'FILL' 1;">upload_file</span>
+        <h2 class="font-headline-lg text-primary font-bold mb-2">Drop Exam JSON Here</h2>
+        <p class="font-body-md text-on-surface-variant mb-6">Drag and drop your mock test JSON file to begin.</p>
+        <input type="file" id="json-upload" accept=".json" class="hidden">
+        <button onclick="document.getElementById('json-upload').click()" class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md font-bold hover:bg-primary-container hover:scale-105 transition-all shadow-md">Browse File</button>
+    </div>
+
+    <!-- Exam Container (Hidden initially) -->
+    <div id="exam-container" class="w-full max-w-[800px] animate-in fade-in duration-700 slide-in-from-bottom-4 hidden">
+        <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-lg lg:p-xl shadow-sm">
+            <div class="flex justify-between items-center mb-lg">
+                <span id="question-counter" class="text-on-surface-variant font-label-md text-label-md uppercase tracking-widest">Question 1 of ?</span>
+                <div class="h-2 w-32 bg-surface-container rounded-full overflow-hidden">
+                    <div id="progress-bar" class="h-full bg-primary w-[0%] transition-all duration-500"></div>
+                </div>
+            </div>
+            
+            <h2 id="question-text" class="font-headline-lg text-headline-lg text-on-surface mb-xl leading-snug">
+                Loading question...
+            </h2>
+            
+            <div id="options-container" class="space-y-md">
+                <!-- Options injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Timer Edit Modal -->
+    <div id="time-edit-modal" class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center">
+        <div class="bg-white rounded-xl p-lg shadow-xl w-80">
+            <h3 class="font-headline-md font-bold mb-4 text-[#1A1A1A]">Edit Timer</h3>
+            <div class="flex gap-4 mb-6">
+                <div class="flex-1">
+                    <label class="block text-xs font-bold text-gray-500 mb-1">Hours</label>
+                    <input type="number" id="edit-hours" class="w-full px-3 py-2 border border-gray-300 rounded focus:border-[#00288e] outline-none" min="0" max="23" value="0">
+                </div>
+                <div class="flex-1">
+                    <label class="block text-xs font-bold text-gray-500 mb-1">Mins</label>
+                    <input type="number" id="edit-mins" class="w-full px-3 py-2 border border-gray-300 rounded focus:border-[#00288e] outline-none" min="0" max="59" value="45">
+                </div>
+                <div class="flex-1">
+                    <label class="block text-xs font-bold text-gray-500 mb-1">Secs</label>
+                    <input type="number" id="edit-secs" class="w-full px-3 py-2 border border-gray-300 rounded focus:border-[#00288e] outline-none" min="0" max="59" value="0">
+                </div>
+            </div>
+            <div class="flex justify-end gap-3">
+                <button id="cancel-time-btn" class="px-4 py-2 text-gray-600 hover:bg-gray-100 rounded font-bold transition-colors">Cancel</button>
+                <button id="save-time-btn" class="px-4 py-2 bg-[#00288e] text-white rounded font-bold hover:bg-[#1e40af] transition-colors">Save</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="fixed bottom-0 w-full z-50 bg-surface dark:bg-on-background border-t border-outline-variant dark:border-outline flex justify-between items-center px-lg py-md w-full shadow-lg">
+    <div class="flex items-center gap-md">
+        <button id="prev-btn" class="text-primary border border-primary rounded-lg px-lg py-sm font-label-md text-label-md hover:bg-primary-container/10 transition-all active:scale-95 flex items-center gap-sm disabled:opacity-50 disabled:cursor-not-allowed">
+            <span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span> Previous
+        </button>
+        <button id="next-btn" class="text-primary border border-primary rounded-lg px-lg py-sm font-label-md text-label-md hover:bg-primary-container/10 transition-all active:scale-95 flex items-center gap-sm disabled:opacity-50 disabled:cursor-not-allowed">
+            Next <span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+        </button>
+    </div>
+    <div class="flex items-center gap-lg">
+        <button id="submit-test-btn" class="bg-primary text-on-primary rounded-lg px-xl py-sm font-label-md text-label-md hover:bg-primary-container transition-all scale-100 active:scale-95 shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+            Submit Test
+        </button>
+    </div>
+</footer>
+
+
+
+<script src="{{ url_for('static', filename='exam.js') }}"></script>
+</body></html>

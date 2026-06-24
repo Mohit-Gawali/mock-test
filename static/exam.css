@@ -1,0 +1,20 @@
+body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .option-card:hover {
+            border-color: #00288e;
+            background-color: #f4f2fc;
+        }
+        .option-radio:checked + .option-content {
+            border-color: #00288e;
+            background-color: #eff6ff;
+        }
+        .timer-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
