@@ -60,7 +60,14 @@ To generate a test, upload a JSON file structured like this:
 
 Because this app uses an entirely stateless architecture, it is incredibly easy and cheap (free) to deploy.
 
-### Deploy on Render (Recommended for Free Tier)
+### Deploy on Vercel (Recommended for Serverless)
+1. Push your code to GitHub.
+2. Go to [Vercel](https://vercel.com) > **Add New Project**.
+3. Connect your GitHub repository and select this project.
+4. Leave the **Framework Preset** as **Other**.
+5. Click **Deploy**. Vercel will automatically read the `vercel.json` file and host your app for free!
+
+### Deploy on Render (Recommended for Container Hosting)
 1. Push your code to GitHub.
 2. Go to [Render.com](https://render.com) > **New Web Service**.
 3. Connect your GitHub repository.
